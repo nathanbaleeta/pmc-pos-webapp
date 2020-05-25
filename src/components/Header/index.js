@@ -8,16 +8,20 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import { Link } from "react-router-dom";
 
 import clsx from "clsx";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import List from "@material-ui/core/List";
+
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import InsertChartIcon from "@material-ui/icons/InsertChart";
+import GroupIcon from "@material-ui/icons/Group";
+import SettingsIcon from "@material-ui/icons/Settings";
+import BarChartIcon from "@material-ui/icons/BarChart";
+import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
   fullList: {
     width: "auto",
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit",
   },
 }));
 
@@ -75,33 +83,64 @@ export default function MenuAppBar() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {["Expenses", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to="/" className={classes.link}>
+        <ListItem button key={"PMC"}>
+          <ListItemIcon>
+            <MenuIcon />
+          </ListItemIcon>
+          <ListItemText primary={"PMC"} />
+        </ListItem>
+      </Link>
+
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link to="/" className={classes.link}>
+        <ListItem button key={"Dashboard"}>
+          <ListItemIcon>
+            <InsertChartIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Dashboard"} />
+        </ListItem>
+      </Link>
+      <Link to="/expenses" className={classes.link}>
+        <ListItem button key={"Expenses"}>
+          <ListItemIcon>
+            <BarChartIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Expenses"} />
+        </ListItem>
+      </Link>
+      <Divider />
+
+      <Link to="/users" className={classes.link}>
+        <ListItem button key={"Users"}>
+          <ListItemIcon>
+            <GroupIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Users"} />
+        </ListItem>
+      </Link>
+      <Link to="/settings" className={classes.link}>
+        <ListItem button key={"Settings"}>
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Settings"} />
+        </ListItem>
+      </Link>
+      <Link to="/sign-out" className={classes.link}>
+        <ListItem button key={"Sign out"}>
+          <ListItemIcon>
+            <PowerSettingsNewIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Sign out"} />
+        </ListItem>
+      </Link>
     </div>
   );
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "brown" }}>
+      <AppBar position="static" style={{ background: "#2E8B57" }}>
         <Toolbar>
           {["left"].map((anchor) => (
             <IconButton
