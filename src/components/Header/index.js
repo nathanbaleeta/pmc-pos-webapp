@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "inherit",
+    fontSize: "12px",
   },
 }));
 
@@ -140,7 +141,7 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#2E8B57" }}>
+      <AppBar position="fixed" style={{ background: "#2E8B57" }}>
         <Toolbar>
           {["left"].map((anchor) => (
             <IconButton
