@@ -16,7 +16,6 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import InsertChartIcon from "@material-ui/icons/InsertChart";
 import GroupIcon from "@material-ui/icons/Group";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -89,7 +88,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <MenuIcon />
           </ListItemIcon>
-          <ListItemText primary={"PMC"} />
+          <Typography variant="subtitle1" gutterBottom>
+            PMC
+          </Typography>
         </ListItem>
       </Link>
 
@@ -99,7 +100,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <InsertChartIcon />
           </ListItemIcon>
-          <ListItemText primary={"Dashboard"} />
+          <Typography variant="body2" gutterBottom>
+            Dashboard
+          </Typography>
         </ListItem>
       </Link>
       <Link to="/expenses" className={classes.link}>
@@ -107,7 +110,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <BarChartIcon />
           </ListItemIcon>
-          <ListItemText primary={"Expenses"} />
+          <Typography variant="body2" gutterBottom>
+            Expenses
+          </Typography>
         </ListItem>
       </Link>
       <Divider />
@@ -117,7 +122,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <GroupIcon />
           </ListItemIcon>
-          <ListItemText primary={"Users"} />
+          <Typography variant="body2" gutterBottom>
+            Users
+          </Typography>
         </ListItem>
       </Link>
       <Link to="/settings" className={classes.link}>
@@ -125,7 +132,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <SettingsIcon />
           </ListItemIcon>
-          <ListItemText primary={"Settings"} />
+          <Typography variant="body2" gutterBottom>
+            Settings
+          </Typography>
         </ListItem>
       </Link>
       <Link to="/sign-out" className={classes.link}>
@@ -133,7 +142,9 @@ export default function MenuAppBar() {
           <ListItemIcon>
             <PowerSettingsNewIcon />
           </ListItemIcon>
-          <ListItemText primary={"Sign out"} />
+          <Typography variant="body2" gutterBottom>
+            Sign out
+          </Typography>
         </ListItem>
       </Link>
     </div>
