@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import CustomerCountWidget from "./CustomerCountWidget";
-import StoreCountWidget from "./StoreCountWidget";
 import OrderCountWidget from "./OrderCountWidget";
 import TransporterCountWidget from "./TransporterCountWidget";
 
@@ -79,13 +77,6 @@ class Dashboard extends Component {
               <ServiceTypeWidget />
               <br />
               <Grid container spacing={3}>
-                {/*  <Grid item lg={6} sm={12} xs={12}>
-                  <CustomerCountWidget />
-                </Grid>
-                <Grid item lg={6} sm={12} xs={12}>
-                  <StoreCountWidget />
-                </Grid>
- */}
                 <Grid item lg={12} sm={12} xs={12}>
                   <SalesPerformanceWidget />
                 </Grid>
