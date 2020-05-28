@@ -3,6 +3,7 @@ import { Chart } from "react-google-charts";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -48,7 +49,11 @@ class ServiceTypeWidget extends Component {
                 width={"100%"}
                 height={"540px"}
                 chartType="PieChart"
-                loader={<div>Loading Chart</div>}
+                loader={
+                  <div>
+                    <CircularProgress />
+                  </div>
+                }
                 data={[
                   ["Service", "Sales by month"],
                   ["Consultation", 11],

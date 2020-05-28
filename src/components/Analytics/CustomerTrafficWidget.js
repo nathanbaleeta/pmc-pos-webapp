@@ -3,6 +3,7 @@ import { Chart } from "react-google-charts";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -46,7 +47,11 @@ class CustomerTrafficWidget extends Component {
                 width={"100%"}
                 height={"540px"}
                 chartType="Line"
-                loader={<div>Loading Chart</div>}
+                loader={
+                  <div>
+                    <CircularProgress />
+                  </div>
+                }
                 data={[
                   ["Day", "Customers"],
                   [1, 37.8],
