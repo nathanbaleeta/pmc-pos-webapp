@@ -7,8 +7,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 
-//import firebase from "../common/firebase";
-
 const styles = (theme) => ({
   root: {
     flexGrow: 1,
@@ -25,7 +23,7 @@ const styles = (theme) => ({
   },
 });
 
-class TransporterTrafficWidget extends Component {
+class CustomerTrafficWidget extends Component {
   state = {};
 
   componentDidMount() {}
@@ -50,26 +48,28 @@ class TransporterTrafficWidget extends Component {
                 chartType="Line"
                 loader={<div>Loading Chart</div>}
                 data={[
-                  ["Day", "Momo Pay", "Bank Transfers"],
-                  [1, 37.8, 80.8],
-                  [2, 30.9, 69.5],
-                  [3, 25.4, 57],
-                  [4, 11.7, 18.8],
-                  [5, 11.9, 17.6],
-                  [6, 8.8, 13.6],
-                  [7, 7.6, 12.3],
-                  [8, 12.3, 29.2],
-                  [9, 16.9, 42.9],
-                  [10, 12.8, 30.9],
-                  [11, 5.3, 7.9],
-                  [12, 6.6, 8.4],
-                  [13, 4.8, 6.3],
-                  [14, 4.2, 6.2],
+                  ["Day", "Customers"],
+                  [1, 37.8],
+                  [2, 30.9],
+                  [3, 25.4],
+                  [4, 11.7],
+                  [5, 11.9],
+                  [6, 8.8],
+                  [7, 7.6],
+                  [8, 12.3],
+                  [9, 16.9],
+                  [10, 12.8],
+                  [11, 5.3],
+                  [12, 6.6],
+                  [13, 4.8],
+                  [14, 4.2],
+                  [15, 11.9],
+                  [16, 8.3],
                 ]}
                 options={{
                   chart: {
-                    title: "Monthly Transaction performance",
-                    subtitle: "in Ug Shs",
+                    title: "Monthly Customer performance",
+                    subtitle: "Patients",
                   },
                 }}
                 rootProps={{ "data-testid": "3" }}
@@ -82,8 +82,8 @@ class TransporterTrafficWidget extends Component {
   }
 }
 
-TransporterTrafficWidget.propTypes = {
+CustomerTrafficWidget.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TransporterTrafficWidget);
+export default withStyles(styles)(CustomerTrafficWidget);

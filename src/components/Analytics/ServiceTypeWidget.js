@@ -25,7 +25,7 @@ const styles = (theme) => ({
   },
 });
 
-class TransporterTrafficWidget extends Component {
+class ServiceTypeWidget extends Component {
   state = {};
 
   componentDidMount() {}
@@ -46,19 +46,18 @@ class TransporterTrafficWidget extends Component {
             >
               <Chart
                 width={"100%"}
-                height={"310px"}
+                height={"540px"}
                 chartType="PieChart"
                 loader={<div>Loading Chart</div>}
                 data={[
-                  ["Product", "Sales by month"],
-                  ["Cement", 11],
-                  ["Paint", 2],
-                  ["Pipes", 2],
-                  ["Steel", 2],
-                  ["Roofings", 7],
+                  ["Service", "Sales by month"],
+                  ["Consultation", 11],
+                  ["Scan", 2],
+                  ["Lab", 21],
+                  ["Drugs", 12],
                 ]}
                 options={{
-                  title: "Sales by product type",
+                  title: "Services by type",
                   // Just add this option
                   is3D: true,
                 }}
@@ -72,8 +71,8 @@ class TransporterTrafficWidget extends Component {
   }
 }
 
-TransporterTrafficWidget.propTypes = {
+ServiceTypeWidget.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TransporterTrafficWidget);
+export default withStyles(styles)(ServiceTypeWidget);

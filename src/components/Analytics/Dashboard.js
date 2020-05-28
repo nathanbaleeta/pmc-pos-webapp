@@ -9,8 +9,8 @@ import StoreCountWidget from "./StoreCountWidget";
 import OrderCountWidget from "./OrderCountWidget";
 import TransporterCountWidget from "./TransporterCountWidget";
 
-import TransacTionTrafficWidget from "./TransactionTrafficWidget";
-import TransacTionTypeWidget from "./TransactionTypeWidget";
+import CustomerTrafficWidget from "./CustomerTrafficWidget";
+import ServiceTypeWidget from "./ServiceTypeWidget";
 import CompanyPerformanceWidget from "./CompanyPerformanceWidget";
 import SalesPerformanceWidget from "./SalesPerformanceWidget";
 
@@ -50,14 +50,9 @@ class Dashboard extends Component {
     return (
       <Fragment>
         <div className={classes.root}>
-          <br />
-          <br />
-          <br />
-          <br />
-
           <Grid container spacing={4}>
             <Grid item lg={7} sm={7} xs={12}>
-              <TransacTionTrafficWidget />
+              <CustomerTrafficWidget />
               <br />
               <Grid container spacing={3}>
                 <Grid item lg={4} sm={12} xs={12}>
@@ -81,16 +76,16 @@ class Dashboard extends Component {
               </Grid>
             </Grid>
             <Grid item lg={5} sm={5} xs={12}>
-              <TransacTionTypeWidget />
+              <ServiceTypeWidget />
               <br />
               <Grid container spacing={3}>
-                <Grid item lg={6} sm={12} xs={12}>
+                {/*  <Grid item lg={6} sm={12} xs={12}>
                   <CustomerCountWidget />
                 </Grid>
                 <Grid item lg={6} sm={12} xs={12}>
                   <StoreCountWidget />
                 </Grid>
-
+ */}
                 <Grid item lg={12} sm={12} xs={12}>
                   <SalesPerformanceWidget />
                 </Grid>
