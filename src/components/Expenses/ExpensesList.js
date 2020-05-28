@@ -253,37 +253,24 @@ class ExpensesList extends Component {
 
           <Dialog
             open={this.state.open}
+            maxWidth="xs"
             onClose={this.closeDialog}
             aria-labelledby="form-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-            <DialogTitle
-              id="simple-dialog-title"
-              color="default"
-              style={{ backgroundColor: "#2E3B55" }}
-            >
-              <Typography
-                component="h1"
-                variant="headline"
-                align="center"
-                style={{ color: "white" }}
-              >
+            <DialogTitle id="simple-dialog-title" color="default">
+              <Typography component="h1" variant="h5" align="center">
                 Edit Expense
               </Typography>
             </DialogTitle>
             <DialogContent
               style={{
-                zoom: "80%",
+                zoom: "70%",
               }}
             >
               <DialogContentText id="alert-dialog-description" color="primary">
-                <br />
                 <form onSubmit={this.handleSubmit}>
-                  <Typography variant="headline" align="left" color="primary">
-                    Expense details
-                  </Typography>
-                  <br />
-                  <Grid container spacing={8}>
+                  <Grid container spacing={2}>
                     <Grid item xs={12} sm={12}>
                       <TextField
                         required
@@ -358,7 +345,7 @@ class ExpensesList extends Component {
                         variant="contained"
                         fullWidth
                         size="large"
-                        color="secondary"
+                        color="primary"
                       >
                         Update Expense
                       </Button>

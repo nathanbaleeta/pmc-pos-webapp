@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
@@ -20,7 +20,7 @@ const styles = (theme) => ({
   },
 });
 
-class ExpenseForm extends React.Component {
+class ExpenseForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -87,13 +87,8 @@ class ExpenseForm extends React.Component {
 
     return (
       <div>
-        <br />
         <form onSubmit={this.handleSubmit}>
-          <Typography variant="headline" align="left" color="primary">
-            Expense details
-          </Typography>
-          <br />
-          <Grid container spacing={8}>
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={12}>
               <TextField
                 required
@@ -162,14 +157,12 @@ class ExpenseForm extends React.Component {
             </Grid>
 
             <Grid item xs={12} sm={12}>
-              <br />
-
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 size="large"
-                color="secondary"
+                color="primary"
               >
                 Save Expense
               </Button>

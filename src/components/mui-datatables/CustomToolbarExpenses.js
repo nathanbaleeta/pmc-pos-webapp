@@ -17,16 +17,16 @@ import { Typography } from "@material-ui/core";
 
 import ExpenseForm from "../Expenses/ExpenseForm";
 
-const styles = theme => ({
+const styles = (theme) => ({
   iconButton: {},
-  dialogPaper: {}
+  dialogPaper: {},
 });
 
 class CustomToolbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
     };
   }
 
@@ -51,30 +51,19 @@ class CustomToolbar extends Component {
 
         <Dialog
           id="myDialog"
-          maxWidth="sm"
+          maxWidth="xs"
           open={this.state.open}
           aria-labelledby="form-dialog-title"
           onClose={this.handleClose}
         >
-          <DialogTitle
-            id="simple-dialog-title"
-            color="default"
-            style={{
-              backgroundColor: "#2E3B55"
-            }}
-          >
-            <Typography
-              component="h1"
-              variant="headline"
-              align="center"
-              style={{ color: "white" }}
-            >
+          <DialogTitle id="simple-dialog-title" color="primary">
+            <Typography component="h1" variant="h5" align="center">
               Add Expense
             </Typography>
           </DialogTitle>
           <DialogContent
             style={{
-              zoom: "80%"
+              zoom: "70%",
             }}
           >
             <Route path="/expenses" component={ExpenseForm} />
@@ -91,7 +80,7 @@ class CustomToolbar extends Component {
 }
 
 CustomToolbar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles, { name: "CustomToolbar" })(CustomToolbar);
